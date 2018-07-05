@@ -5,8 +5,8 @@ import org.apache.ibatis.plugin.Interceptor;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.springframework.context.annotation.Bean;
-import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
-import org.springframework.core.io.support.ResourcePatternResolver;
+//import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
+//import org.springframework.core.io.support.ResourcePatternResolver;
 
 import java.util.Properties;
 
@@ -29,7 +29,7 @@ public class MyBatisConfig {
         //添加分页插件
         bean.setPlugins(new Interceptor[]{pageHelper});
 
-        ResourcePatternResolver resolver = new PathMatchingResourcePatternResolver();
+//        ResourcePatternResolver resolver = new PathMatchingResourcePatternResolver();
         try {
             //基于注解扫描Mapper，不需配置xml路径
             //bean.setMapperLocations(resolver.getResources("classpath:mapper/*.xml"));

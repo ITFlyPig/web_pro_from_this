@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.wangyuelin.app.mapper.MovieMapper">
+    <resultMap id="HomeMovieResult" type="com.wangyuelin.app.bean.HomeMovieBean">
+        <id column="id" property="id" jdbcType="INTEGER"/>
+        <result column="cn_name" property="name" jdbcType="VARCHAR"/>
+        <result column="show_year" property="year" jdbcType="VARCHAR"/>
+        <result column="detail_web_url" property="detailUrl" jdbcType="VARCHAR"/>
+        <result column="douban_rank" property="doubanRank" jdbcType="FLOAT"/>
+        <result column="posters" property="poster" jdbcType="VARCHAR"/>
+
+    </resultMap>
+
+
+    <select id="getByTag" parameterType="String" resultMap="HomeMovieResult">
+        select * from movie where movie_tag  like #{detailUrl} LIMIT 12
+    </select>
+
+    <select id="getMovies" resultMap="HomeMovieResult" parameterType="java.lang.Integer" >
+        SELECT * FROM movie_copy1 LIMIT #{num}
+    </select>
+
+</mapper>
