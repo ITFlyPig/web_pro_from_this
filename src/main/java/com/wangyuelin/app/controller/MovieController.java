@@ -35,12 +35,20 @@ public class MovieController {
         HomeMovieResp resp = new HomeMovieResp();
         resp.setCode(Constant.RespCode.SUCCESS);
         resp.setMsg(Constant.MSG.SUCCESS);
+        resp.setData(new ArrayList<Map<String, List<HomeMovieBean>>>());
 
         Map<String, List<HomeMovieBean>> movieMap = getHomeMovieByTag(MovieTag.ZUIXIN);
         if (movieMap != null) {
-            resp.setData(new ArrayList<Map<String, List<HomeMovieBean>>>());
             resp.getData().add(movieMap);
+        }
 
+        Map<String, List<HomeMovieBean>> hotMap = getHomeMovieByTag(MovieTag.REMEN);
+        if (hotMap != null) {
+            resp.getData().add(hotMap);
+        }
+        Map<String, List<HomeMovieBean>> goodMap = getHomeMovieByTag(MovieTag.JINGDIAN);
+        if (goodMap != null) {
+            resp.getData().add(goodMap);
         }
         return resp;
 
@@ -56,7 +64,7 @@ public class MovieController {
         if (tag == null) {
             return null;
         }
-        List<HomeMovieBean> movies = iMovie.getMoviesByNum(12);
+        List<HomeMovieBean> movies = iMovie.getMoviesByNum(tag.getTagStr(), 12);
         if (movies == null) {
             return null;
         }

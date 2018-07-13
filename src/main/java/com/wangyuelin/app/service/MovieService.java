@@ -29,11 +29,11 @@ public class MovieService implements IMovie {
     }
 
     @Override
-    public List<HomeMovieBean> getMoviesByNum(int num) {
-        if (num <= 0) {
+    public List<HomeMovieBean> getMoviesByNum(String tag, int num) {
+        if (num <= 0 || TextUtil.isEmpty(tag)) {
             return null;
         }
-        return movieMapper.getMovies(num);
+        return movieMapper.getMovies(tag, num);
 
     }
 }

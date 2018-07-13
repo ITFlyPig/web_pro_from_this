@@ -12,6 +12,6 @@ import java.util.List;
  */
 public interface IMovie {
     List<HomeMovieBean> getByTag(String tag);
-     List<HomeMovieBean> getMoviesByNum(int num);
+     List<HomeMovieBean> getMoviesByNum(String tag, int num);
 
 }
