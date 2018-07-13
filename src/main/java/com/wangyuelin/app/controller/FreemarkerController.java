@@ -71,5 +71,11 @@ public class FreemarkerController {
         return "home_movie";
     }
 
+    @RequestMapping("dlz_movie/detail")
+    public String detailMovie(ModelMap modelMap) {
+        return "detail";
+
+    }
+
 
 }
