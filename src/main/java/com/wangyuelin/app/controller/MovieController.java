@@ -2,6 +2,7 @@ package com.wangyuelin.app.controller;
 
 import com.wangyuelin.app.bean.HomeMovieBean;
 import com.wangyuelin.app.bean.HomeMovieResp;
+import com.wangyuelin.app.bean.MovieDetail;
 import com.wangyuelin.app.bean.MovieTagBean;
 import com.wangyuelin.app.service.itf.IMovie;
 import com.wangyuelin.app.utils.Constant;
@@ -71,6 +72,20 @@ public class MovieController {
         HashMap<String, List<HomeMovieBean>> tagMovie = new HashMap<String, List<HomeMovieBean>>();
         tagMovie.put(tag.getTagStr(), movies);
         return tagMovie;
+
+    }
+
+    /**
+     * 据id查询对应的电影
+     * @param id
+     * @return
+     */
+    public MovieDetail getMovieByid(int id) {
+        List<MovieDetail> movies = iMovie.getMovieById(id);
+        if (movies == null || movies.size() == 0) {
+            return null;
+        }
+        return movies.get(0);
 
     }
 

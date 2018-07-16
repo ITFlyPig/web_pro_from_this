@@ -1,6 +1,7 @@
 package com.wangyuelin.app.service.itf;
 
 import com.wangyuelin.app.bean.HomeMovieBean;
+import com.wangyuelin.app.bean.MovieDetail;
 
 import java.util.List;
 
@@ -13,5 +14,6 @@ import java.util.List;
 public interface IMovie {
     List<HomeMovieBean> getByTag(String tag);
      List<HomeMovieBean> getMoviesByNum(String tag, int num);
+     List<MovieDetail> getMovieById(int id);
 
 }

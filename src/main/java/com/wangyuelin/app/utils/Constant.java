@@ -1,5 +1,7 @@
 package com.wangyuelin.app.utils;
 
+import javax.xml.soap.SAAJResult;
+
 /**
  * 描述:
  *
@@ -17,6 +19,11 @@ public class Constant {
     public interface MSG {
         String SUCCESS = "数据请求成功";
         String ERROE = "数据请求失败";
+    }
+
+    public interface Page{
+        String P_404 = "404";
+        String ERROR = "error";
     }
 
 

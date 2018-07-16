@@ -1,6 +1,7 @@
 package com.wangyuelin.app.service;
 
 import com.wangyuelin.app.bean.HomeMovieBean;
+import com.wangyuelin.app.bean.MovieDetail;
 import com.wangyuelin.app.mapper.MovieMapper;
 import com.wangyuelin.app.service.itf.IMovie;
 import com.wangyuelin.app.utils.TextUtil;
@@ -35,5 +36,13 @@ public class MovieService implements IMovie {
         }
         return movieMapper.getMovies(tag, num);
 
+    }
+
+    @Override
+    public List<MovieDetail> getMovieById(int id) {
+        if (id < 0) {
+            return null;
+        }
+        return movieMapper.getMovieById(id);
     }
 }
