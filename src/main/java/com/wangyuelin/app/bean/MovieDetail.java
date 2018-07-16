@@ -1,5 +1,7 @@
 package com.wangyuelin.app.bean;
 
+import com.wangyuelin.app.utils.TextUtil;
+
 import java.util.List;
 
 /**
@@ -198,4 +200,31 @@ public class MovieDetail {
     public void setPosters(String posters) {
         this.posters = posters;
     }
+
+    /**
+     * 据不同的分隔符，返回第一个数据
+     * @param str
+     * @param splitC
+     * @return
+     */
+    public String getOne(String str, String splitC) {
+        if (TextUtil.isEmpty(splitC) || TextUtil.isEmpty(str)) {
+            return str;
+        }
+        String[] array = str.split(splitC);
+        if (array == null || array.length == 0) {
+            return "";
+        }
+        return array[0];
+    }
+
+
+    /**
+     * 保证以分隔符分隔的多个值的字段，只返回一个值
+     */
+    public void ensureOneValue() {
+        setPosters(getOne(getPosters(), ";"));
+
+    }
+
 }

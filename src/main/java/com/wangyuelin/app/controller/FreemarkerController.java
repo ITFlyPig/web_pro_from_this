@@ -83,9 +83,9 @@ public class FreemarkerController {
             view.setViewName(Constant.Page.P_404);
             return view;
         }
+        detail.ensureOneValue();
         view.addObject("data", detail);
         view.setViewName("detail");
-
         return view;
 
     }

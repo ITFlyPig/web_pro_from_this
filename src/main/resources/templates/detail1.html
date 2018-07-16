@@ -45,12 +45,12 @@
         font-size: 1em;
     }
 
-    .title {
+    .title{
         font-weight: bold;
         font-size: 2em;
     }
 
-    .title_year {
+    .title_year{
         font-size: 1.7em;
         color: darkgrey;
         font-weight: bold;
@@ -66,14 +66,14 @@
         width: 100%;
     }
 
-    .intro {
-        display: inline-block;
+    .intro{
+        display:inline-block;
         font-size: 1.3em;
         padding-bottom: 3px;
         padding-top: 3px;
     }
 
-    .des_title {
+    .des_title{
         font-weight: bold;
         font-size: 1.7em;
         background: #dddddd;
@@ -114,61 +114,54 @@
         </div>
     </nav>
 
-    <th:block th:each="movie:${data}">
-        <div class="row">
-            <!--海报-->
-            <div class="col-md-3 col-sm-4 col-lg-3 col-xs-4">
-                <div class="img-responsive">
-                    <img th:src="${movie.getPosters()}"/>
-                </div>
+
+    <div class="row">
+        <!--海报-->
+        <div class="col-md-3 col-sm-4 col-lg-3 col-xs-4">
+            <div class="img-responsive">
+                <img src="https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2461982063.jpg"/>
             </div>
-            <div class="col-md-8 col-sm-7 col-lg-8 col-xs-7 ">
-                <span class="title" th:text="${movie.getName()}"></span><span class="title_year"
-                                                                              th:text="'（' + ${movie.getShowYear()} + '）'">（2018）</span>
-                <br/>
-                <span class="intro" th:text="'导演：' + ${movie.getDirector()}">编剧: 姜文 / 何冀平 / 李非 / 孙悦 / 张北海</span>
-
-                <br/>
-                <span class="intro" th:text="'编辑：' + ${movie.getScriptwriter()}">编剧: 姜文 / 何冀平 / 李非 / 孙悦 / 张北海</span>
-                <br/>
-                <span class="intro" th:text="'主演：' +${movie.getActors()}">主演: 彭于晏 / 廖凡 / 姜文 / 周韵 / 许晴 / 更多...</span>
-                <br/>
-                <span class="intro" th:text="'类型：' + ${movie.getTypes()}">类型: 剧情 / 喜剧 / 动作</span>
-                <br/>
-                <span class="intro" th:text="'制片国家/地区:' + ${movie.getLocation()}">制片国家/地区: 中国大陆</span>
-                <br/>
-                <span class="intro" th:text="'语言: ' + ${movie.getLanguage()}">语言: 汉语普通话</span>
-                <br/>
-                <span class="intro" th:text="'上映日期: ' + ${movie.getShowTime()}">上映日期: 2018-07-13(中国大陆)</span>
-                <br/>
-                <span class="intro" th:text="'片长: ' +${movie.getMovieTime()}">片长: 137分钟</span>
-                <br/>
-                <span class="intro" th:text="'又名:' + ${movie.getNickName()}">又名: 侠隐 / Hidden Man</span>
-                <br/>
-                <!--<span class="intro">IMDb链接: tt8434380</span>-->
-            </div>
-
         </div>
-
-        <!--剧情简介-->
-        <div class="des_title">
-            <span>剧情简介</span>
-        </div>
-        <div>
-            <span th:text=" '&emsp;' + ${movie.getIntro()}">&emsp;&emsp;&emsp;&emsp;七七事变前夕，华裔青年小亨德勒（彭于晏 饰）从美国远赴重洋，回到阔别十数年之久的北平从医。然而他真正的名字叫李天然，十三岁那年曾亲眼目睹师父一家遭师兄朱潜龙（廖凡 饰）和日本人根本一郎（泽田谦也 饰）灭门。侥幸逃生的天然被美国人亨德勒医生送往大洋彼岸，接受了极其严苛的训练，而今他怀着绝密的任务踏上故土。亨德勒父子租住神秘男子蓝青峰（姜文 饰）的宅子，蓝是当年辛亥革命的参与者，他与现为警察局长的朱潜龙过从甚密，却又以杀死李天然为筹码，暗中怂恿朱除掉根本一郎。复仇心切的李天然寻找到了仇人，而亨德勒医生则全力阻止养子冒险。在这一过程中，交际花唐凤仪（许晴 饰）与裁缝关巧红（周韵 饰）也卷入了男人的勾心斗角的漩涡里。直到七七事变爆发，所有的矛盾迎来了决断的时刻…… </span>
-
+        <div class="col-md-8 col-sm-7 col-lg-8 col-xs-7 " >
+            <span class="title">重生</span><span class="title_year">（2018）</span>
             <br/>
+            <span class="intro">编剧: 姜文 / 何冀平 / 李非 / 孙悦 / 张北海</span>
+            <br/>
+            <span class="intro">主演: 彭于晏 / 廖凡 / 姜文 / 周韵 / 许晴 / 更多...</span>
+            <br/>
+            <span class="intro">类型: 剧情 / 喜剧 / 动作</span>
+            <br/>
+            <span class="intro">制片国家/地区: 中国大陆</span>
+            <br/>
+            <span class="intro">语言: 汉语普通话</span>
+            <br/>
+            <span class="intro">上映日期: 2018-07-13(中国大陆)</span>
+            <br/>
+            <span class="intro">片长: 137分钟</span>
+            <br/>
+            <span class="intro">又名: 侠隐 / Hidden Man</span>
+            <br/>
+            <span class="intro">IMDb链接: tt8434380</span>
         </div>
 
+    </div>
+    <!--剧情简介-->
+    <div class="des_title">
+        <span >剧情简介</span>
+    </div>
+    <div>
+        <span>&emsp;&emsp;&emsp;&emsp;七七事变前夕，华裔青年小亨德勒（彭于晏 饰）从美国远赴重洋，回到阔别十数年之久的北平从医。然而他真正的名字叫李天然，十三岁那年曾亲眼目睹师父一家遭师兄朱潜龙（廖凡 饰）和日本人根本一郎（泽田谦也 饰）灭门。侥幸逃生的天然被美国人亨德勒医生送往大洋彼岸，接受了极其严苛的训练，而今他怀着绝密的任务踏上故土。亨德勒父子租住神秘男子蓝青峰（姜文 饰）的宅子，蓝是当年辛亥革命的参与者，他与现为警察局长的朱潜龙过从甚密，却又以杀死李天然为筹码，暗中怂恿朱除掉根本一郎。复仇心切的李天然寻找到了仇人，而亨德勒医生则全力阻止养子冒险。在这一过程中，交际花唐凤仪（许晴 饰）与裁缝关巧红（周韵 饰）也卷入了男人的勾心斗角的漩涡里。直到七七事变爆发，所有的矛盾迎来了决断的时刻…… </span>
 
-    </th:block>
-
+        <br/>
+        <br/>
+        <span>本片根据张北海的小说《侠隐》改编。</span>
+    </div>
 
     <div class="des_title">
-        <span>电影相关截图</span>
+        <span >电影相关截图</span>
     </div>
     <div class="des_title">
-        <span>在线播放</span>
+        <span >在线播放</span>
     </div>
     <div class="row">
         <div class="col-md-2 col-sm-3 col-lg-2 col-xs-4" style="margin-top: 10px">
@@ -192,13 +185,10 @@
 
     </div>
     <div class="des_title">
-        <span>下载地址</span>
+        <span >下载地址</span>
     </div>
     <ul class="list-group">
-        <li class="list-group-item">
-            <a>ftp://ygdy8:ygdy8@yg72.dydytt.net:8244/阳光电影www.ygdy8.com.分贝人生.BD.720p.国语中字.mkv</a>
-            <button type="button" class="btn btn-default" style="margin-left: 20px">下载</button>
-        </li>
+        <li class="list-group-item"><a>ftp://ygdy8:ygdy8@yg72.dydytt.net:8244/阳光电影www.ygdy8.com.分贝人生.BD.720p.国语中字.mkv</a> <button type="button" class="btn btn-default" style="margin-left: 20px">下载</button></li>
         <li class="list-group-item"><a>magnet:?xt=urn:btih:956b0ee8ba12e08e117cf261d9c3dc902a0e4bfa</a></li>
 
     </ul>
